@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/public/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/stylesheets/main.css">
+  <link rel="stylesheet" href="/public/stylesheets/animate.min.css">
+  <link id="css-preset" href="/public/stylesheets/presets/preset1.css" rel="stylesheet">
+  <link href="/public/stylesheets/font-awesome.min.css" rel="stylesheet">
+  <link href="/public/stylesheets/responsive.css" rel="stylesheet">
+</head>
+<body ng-app="ruseHackApp" ng-controller="mainController">
+<div class="preloader"><i class="fa fa-spinner fa-spin"></i></div>
+<!--/.preloader-->
+
+<header id="home" style={{testDisplay}}>
+  <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="item active" style="background-image: url(http://marketingland.com/wp-content/ml-loads/2014/08/video-tv2-ss-1920.jpg)">
+        <div class="caption">
+          <h1 class="animated fadeInLeftBig">Welcome to <span>Play Portal</span></h1>
+
+          <p class="animated fadeInRightBig">The most complete media experience!</p>
+          <a data-scroll class="btn btn-start animated fadeInUpBig" ng-click="login()">Login with facebook</a>
+        </div>
+      </div>
+      <div class="item" style="background-image: url(http://www.expanddigital.co.uk/wp-content/uploads/2015/06/VideoMarketingHeader1.jpg)">
+        <div class="caption">
+          <h1 class="animated fadeInLeftBig">Welcome to <span>Play Portal</span></span></h1>
+
+          <p class="animated fadeInRightBig">All kinds of entertainment in one portal!</p>
+          <a data-scroll class="btn btn-start animated fadeInUpBig" ng-click="login()">Login with facebook</a>
+        </div>
+      </div>
+    </div>
+    <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+    <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+    <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+
+  </div>
+
+</header>
+<div class="main-nav">
+  <div style={{userPicVisibility}}>
+    <div class="img-container">
+      <a class="floating-image" ng-href="http://www.facebook.com/{{userId}}" target="_blank">
+        <img class="img-circle userPic" src="" alt="" ng-src="{{userPic}}">
+      </a>
+
+      <div class="floating-text">
+        <h4 class="">{{userName}}</h4>
+        <h5 class="">{{userMail}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="border-on-link" ng-href="#/movies" ng-click="selectCategory(0)" style={{selectedButton0}}>Movies</a></li>
+        <li><a class="border-on-link" ng-href="#/youtubeVideos"  ng-click="selectCategory(1)" style={{selectedButton1}}>YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="team" ng-view>
+</div>
+<!--/#home-->
+<script src="/public/javascripts/vendor/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/public/javascripts/vendor/jquery.js"></script>
+<script type="text/javascript" src="/public/javascripts/vendor/wow.min.js"></script>
+<script src="/public/javascripts/vendor/angular.min.js"></script>
+<script src="/public/javascripts/vendor/angular-route.min.js"></script>
+<script src="/public/javascripts/vendor/jquery.easing.1.3.js"></script>
+<script src="/public/javascripts/vendor/ng-infinite-scroll.min.js"></script>
+<script src="/public/javascripts/vendor/wow.min.js"></script>
+<script src="/public/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="/public/javascripts/services/services.js"></script>
+<script src="/public/javascripts/directives/directives.js"></script>
+<script src="/public/javascripts/filters/filters.js"></script>
+<script src="/public/javascripts/app/application.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div class="row text-center">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="caption padding-otdolu">
+      <a data-scroll class="btn btn-start animated fadeInUp catButton" ng-href="#/movies/now-playing" ng-click="selectCategory(2)" style={{selectedButton2}}>Now Playing</a>
+      <a data-scroll class="btn btn-start animated fadeInUp catButton" ng-href="#/movies/popular" ng-click="selectCategory(3)" style={{selectedButton3}}>Popular</a>
+      <a data-scroll class="btn btn-start animated fadeInUp catButton" ng-href="#/movies/top-rated" ng-click="selectCategory(4)" style={{selectedButton4}}>Top Rated</a>
+      <a data-scroll class="btn btn-start animated fadeInUp catButton" ng-href="#/movies/upcoming" ng-click="selectCategory(5)" style={{selectedButton5}}>Upcoming</a>
+    </div>
+    <div style={{showMovieInfo}}>
+      <div class="info">Total Movies: {{totalCount}}</div>
+      <div class="text-capitalize">{{category}}: {{categoryCount}}</div>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+<div ng-if="items.length !== 0" class="text-center">
+  <div infinite-scroll="addMoreItem()" infinite-scroll-distance="1">
+    <div class="row movie-item">
+      <div class="col-md-3 panel panel-wwarning movie-card"
+           ng-repeat="item in movieItems | limitTo:numberOfItemsToDisplay">
+        <div class="poster-field">
+          <div class="poster">
+            <a>
+              <div>
+                <a ng-href="#/player/{{item.key}}/{{item.title}}" target="_blank">
+                  <img class="img-thumbnail"
+                       ng-src="http://image.tmdb.org/t/p/original{{item.poster_path}}"
+                       err-Src="https://cdn.amctheatres.com/Media/Default/Images/noposter.jpg"
+                       alt="No Poster"></a>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="title-field">
+          <h3>
+            <span class="movie-title">{{item.title}}</span>
+          </h3>
+        </div>
+        <h5>
+          <span class="">{{item.release_date}}</span>
+        </h5>
+        <h5>
+          <span class="">Rating: {{item.vote_average}}</span>
+        </h5>
+
+        <div class="caption">
+          <a type="button" ng-href="#/player/{{item.key}}/{{item.title}}" class="btn btn-start catButton"
+             target="_blank">Trailer <i class="glyphicon glyphicon-play"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

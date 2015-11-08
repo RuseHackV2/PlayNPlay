@@ -1,0 +1,64 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET        /                                                                            controllers.Application.index()
+GET        /index.html                                                                  controllers.Assets.at(path="/public/html", file="index.html")
+GET        /init                                                                        @controllers.InitController.initData()
+GET        /getMovie                                                                    @controllers.MovieController.getMovie(category:String,current:Integer,step:Integer)
+GET        /count/category                                                              @controllers.MovieController.getCountByCategory(category:String)
+GET        /count                                                                       @controllers.MovieController.getCount()
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file                                                                controllers.Assets.versioned(path="/public", file: Asset)
+
+
+
+#Scripts
+GET        /public/javascripts/vendor/jquery-2.1.4.min.js                               controllers.Assets.at(path="/public/javascripts/vendor", file="jquery-2.1.4.min.js")
+GET        /public/javascripts/vendor/jquery.js                                         controllers.Assets.at(path="/public/javascripts/vendor", file="jquery.js")
+GET        /public/javascripts/vendor/angular.min.js                                    controllers.Assets.at(path="/public/javascripts/vendor", file="angular.min.js")
+GET        /public/javascripts/vendor/angular-route.min.js                              controllers.Assets.at(path="/public/javascripts/vendor", file="angular-route.min.js")
+GET        /public/javascripts/vendor/jquery.easing.1.3.js                              controllers.Assets.at(path="/public/javascripts/vendor", file="jquery.easing.1.3.js")
+GET        /public/javascripts/vendor/ng-infinite-scroll.min.js                         controllers.Assets.at(path="/public/javascripts/vendor", file="ng-infinite-scroll.min.js")
+GET        /public/javascripts/vendor/wow.min.js                                        controllers.Assets.at(path="/public/javascripts/vendor", file="wow.min.js")
+GET        /public/javascripts/app/application.js                                       controllers.Assets.at(path="/public/javascripts/app", file="application.js")
+GET        /public/javascripts/directives/directives.js                                 controllers.Assets.at(path="/public/javascripts/directives", file="directives.js")
+GET        /public/javascripts/filters/filters.js                                       controllers.Assets.at(path="/public/javascripts/filters", file="filters.js")
+GET        /public/javascripts/services/services.js                                     controllers.Assets.at(path="/public/javascripts/services", file="services.js")
+GET        /public/bootstrap-3.3.5-dist/js/bootstrap.min.js                             controllers.Assets.at(path="/public/bootstrap-3.3.5-dist/js", file="bootstrap.min.js")
+#
+
+
+#CSS
+GET        /public/bootstrap-3.3.5-dist/css/bootstrap.min.css                           controllers.Assets.at(path="/public/bootstrap-3.3.5-dist/css", file="bootstrap.min.css")
+GET        /public/stylesheets/animate.min.css                                          controllers.Assets.at(path="/public/stylesheets", file="animate.css")
+GET        /public/stylesheets/responsive.css                                           controllers.Assets.at(path="/public/stylesheets", file="responsive.css")
+GET        /public/stylesheets/lightbox.css                                             controllers.Assets.at(path="/public/stylesheets", file="lightbox.css")
+GET        /public/stylesheets/main.css                                                 controllers.Assets.at(path="/public/stylesheets", file="main.css")
+GET        /public/stylesheets/presets/preset1.css                                      controllers.Assets.at(path="/public/stylesheets/presets", file="preset1.css")
+GET        /public/stylesheets/font-awesome.min.css                                     controllers.Assets.at(path="/public/stylesheets", file="font-awesome.min.css")
+
+#fonts
+GET        /public/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.ttf          controllers.Assets.at(path="/public/bootstrap-3.3.5-dist/fonts", file="glyphicons-halflings-regular.ttf")
+GET        /public/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.woff         controllers.Assets.at(path="/public/bootstrap-3.3.5-dist/fonts", file="glyphicons-halflings-regular.woff")
+GET        /public/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.woff2        controllers.Assets.at(path="/public/bootstrap-3.3.5-dist/fonts", file="glyphicons-halflings-regular.woff2")
+GET        /public/fonts/fontawesome-webfont.ttf                                        controllers.Assets.at(path="/public/fonts", file="fontawesome-webfont.ttf")
+GET        /public/fonts/fontawesome-webfont.woff                                       controllers.Assets.at(path="/public/fonts", file="fontawesome-webfont.woff")
+GET        /public/fonts/fontawesome-webfont.woff2                                      controllers.Assets.at(path="/public/fonts", file="fontawesome-webfont.woff2")
+
+#
+
+#HTML
+GET        /login.html                                                                  controllers.Assets.at(path="/public/html", file="login.html")
+GET        /movies.html                                                                 controllers.Assets.at(path="/public/html", file="movies.html")
+GET        /player.html                                                                 controllers.Assets.at(path="/public/html", file="player.html")
+GET        /youtubeVideos.html                                                          controllers.Assets.at(path="/public/html", file="youtubeVideos.html")
+GET        /navigation.html                                                             controllers.Assets.at(path="/public/html", file="navigation.html")
+#
+
+#yt
+GET        /public/javascripts/vendor/auth.js                                           controllers.Assets.at(path="/public/javascripts/vendor", file="auth.js")
+
+#
